@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace TDD
 {
@@ -48,26 +43,5 @@ namespace TDD
             return result;
         }
 
-        //API for checking complex password
-        public static string ComplexPasswordCheck(string pwd)
-        {
-            string result = "";
-            Regex regex1 = new Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]){6,20}$");
-            Regex regex2 = new Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*?[#?!@$%^&*-]){6,20}$");
-            Regex regex3 = new Regex("^(?=.*[0-9])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]){6,20}$");
-            Regex regex4 = new Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]){6,20}$");
-            Regex regex5 = new Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*?[#?!@$%^&*-]){6,20}$");
-
-            Match match1 = regex1.Match(pwd);
-            Match match2 = regex2.Match(pwd);
-            Match match3 = regex3.Match(pwd);
-            Match match4 = regex4.Match(pwd);
-            Match match5 = regex5.Match(pwd);
-
-            if (match1.Success || match2.Success || match3.Success ||
-                match4.Success || match5.Success)
-                result = "Valid";
-            return result;
-        }
     }
 }

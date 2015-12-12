@@ -72,17 +72,5 @@ namespace TDD.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void IfComplexPassword()
-        {
-            //Arrange
-            string password = "Pass@1word";
-            string expected = "Valid";
-
-            //Act
-            string actual = PasswordCheck.ComplexPasswordCheck(password);
-
-            Assert.AreEqual(expected, actual);
-        }
     }
 }
